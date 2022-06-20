@@ -1,7 +1,7 @@
 name: soopulae_tex
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: soopulae_tex_widget
+version: 0.0.3
+homepage: https://github.com/Run10Break1/soopulae_tex
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -26,6 +26,75 @@ flutter:
   # To add assets to your package, add an assets section, like this:
   assets:
     - packages/soopulae_tex/assets/index.html
+    # js
+    - packages/soopulae_tex/assets/js/auto-render.min.js
+    - packages/soopulae_tex/assets/js/katex.min.js
+    - packages/soopulae_tex/assets/js/html2canvas.min.js
+    # css
+    - packages/soopulae_tex/assets/css/base.css
+    - packages/soopulae_tex/assets/css/katex.min.css
+    # font
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_AMS-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_AMS-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_AMS-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Caligraphic-Bold.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Caligraphic-Bold.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Caligraphic-Bold.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Caligraphic-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Caligraphic-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Caligraphic-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Fraktur-Bold.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Fraktur-Bold.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Fraktur-Bold.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Fraktur-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Fraktur-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Fraktur-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Bold.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Bold.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Bold.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-BoldItalic.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-BoldItalic.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-BoldItalic.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Italic.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Italic.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Italic.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Main-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Math-BoldItalic.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Math-BoldItalic.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Math-BoldItalic.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Math-Italic.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Math-Italic.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Math-Italic.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Bold.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Bold.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Bold.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Italic.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Italic.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Italic.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_SansSerif-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Script-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Script-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Script-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size1-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size1-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size1-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size2-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size2-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size2-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size3-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size3-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size3-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size4-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size4-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Size4-Regular.woff2
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Typewriter-Regular.ttf
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Typewriter-Regular.woff
+    - packages/soopulae_tex/assets/css/fonts/KaTeX_Typewriter-Regular.woff2
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   #
