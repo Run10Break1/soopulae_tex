@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" href="css/katex.min.css">
-    <link rel="stylesheet" href="css/base.css">
-    <script defer src="js/katex.min.js"></script>
-    <script defer src="js/auto-render.min.js"></script>
-    <script defer src="js/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="./css/katex.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <script defer src="./js/katex.min.js"></script>
+    <script defer src="./js/auto-render.min.js"></script>
+    <script defer src="./js/html2canvas.min.js"></script>
     <script>
 
-        const options = {
+        const KatexOptions = {
             delimiters: [
                 {left: "\\(", right: "\\)", display: false},
                 {left: "$$", right: "$$", display: false},
             ],
             throwOnError : false
+        };
+        const captureOptions = {
+            backgroundColor: null,
         };
 
         const contentReady = new Promise(function(resolve) {
@@ -35,26 +38,41 @@
 
         Promise.allSettled([contentReady, webViewReady]).then(function() {
 
+            const katexWrapperElm = document.getElementById("katex_wrapper");
             const katexElm = document.getElementById("katex");
 
-            window.flutter_inappwebview.callHandler("requestKatex").then(function(katex) {
+            window.flutter_inappwebview.callHandler("requestInit").then(function(data) {
 
-                katexElm.innerHTML = katex;
-                renderMathInElement(katexElm, options);
+                katexElm.innerHTML = data[0];
+                document.body.style.backgroundColor = data[1];
+                captureOptions.backgroundColor = data[2];
+                document.body.style.width = `${data[3]}px`;
 
-                html2canvas(katexElm).then(function(canvas) {
+                renderMathInElement(katexElm, KatexOptions);
+
+                console.log(`(w, h) = (${katexWrapperElm.offsetWidth}, ${katexWrapperElm.offsetHeight})`);
+                console.log(`(dw, dh) = (${document.body.offsetWidth}, ${document.body.offsetHeight})`);
+
+                html2canvas(katexWrapperElm, captureOptions).then(function(canvas) {
                     const base64png = canvas.toDataURL();
 
                     window.flutter_inappwebview.callHandler("captureFinished", base64png, canvas.width, canvas.height);
                 });
 
-                window.flutter_inappwebview.callHandler("katexRendered");
+                const katexWrapperElmStyle = window.getComputedStyle(katexWrapperElm);
+                const width = parseFloat(katexWrapperElm.offsetWidth) + parseFloat(katexWrapperElmStyle.marginLeft) + parseFloat(katexWrapperElmStyle.marginRight);
+                const height = parseFloat(katexWrapperElm.offsetHeight) + parseFloat(katexWrapperElmStyle.marginTop) + parseFloat(katexWrapperElmStyle.marginBottom);
+
+                window.flutter_inappwebview.callHandler("katexRendered", width, height);
             });
         });
     </script>
 
 </head>
 <body>
-<div id="katex"></div>
+    <div id="katex_wrapper">
+        <div id="katex"></div>
+        <div id="katex_bottom"></div>
+    </div>
 </body>
 </html>

@@ -2,6 +2,19 @@ body {
     margin: 0;
 }
 
+div#katex_wrapper {
+    padding: 4px;
+}
+
 div#katex {
-    margin: 5px;
+    margin: 2px;
+}
+
+div.newline {
+    height: 8px;
+}
+
+.katex {
+    font: normal 1.1em;
+    line-height: 1.2;
 }
